@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bootstrap Testimonial Carousel</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700|Open+Sans">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<style>
+      .navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+  }
+  .navigation a::after {
+    content: '';
+    position: absolute;
+    background: black;
+    height: 3px;
+    bottom: -6px;
+    width: 100%;
+    left: 0;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+  }
+  .navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+body {
+	font-family: "Open Sans", sans-serif;
+    
+}
+/* carousel */
+#quote-carousel 
+{
+  padding: 0 10px 30px 10px;
+  margin-top: 30px;
+}
+
+
+/* Control buttons  */
+#quote-carousel .carousel-control
+{
+  background: none;
+  color: #222;
+  font-size: 2.3em;
+  text-shadow: none;
+  margin-top: 30px;
+}
+/* Previous button  */
+#quote-carousel .carousel-control.left 
+{
+  left: -12px;
+}
+/* Next button  */
+#quote-carousel .carousel-control.right 
+{
+  right: -12px !important;
+}
+/* Changes the position of the indicators */
+#quote-carousel .carousel-indicators 
+{
+  right: 50%;
+  top: auto;
+  bottom: 0px;
+  margin-right: -19px;
+}
+/* Changes the color of the indicators */
+#quote-carousel .carousel-indicators li 
+{
+  background: #c0c0c0;
+}
+#quote-carousel .carousel-indicators .active 
+{
+  background: #333333;
+}
+#quote-carousel img
+{
+  width: 250px;
+  height: 100px
+}
+/* End carousel */
+
+.item blockquote {
+    border-left: none; 
+    margin: 0;
+}
+
+.item blockquote img {
+    margin-bottom: 10px;
+}
+
+.item blockquote p:before {
+    content: "\f10d";
+    font-family: 'Fontawesome';
+    float: left;
+    margin-right: 10px;
+}
+
+
+
+/**
+  MEDIA QUERIES
+*/
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    #quote-carousel 
+    {
+      margin-bottom: 0;
+      padding: 0 40px 30px 40px;
+    }
+    
+}
+
+/* Small devices (tablets, up to 768px) */
+@media (max-width: 768px) { 
+    
+    /* Make the indicators larger for easier clicking with fingers/thumb on mobile */
+    
+    #quote-carousel .carousel-indicators {
+        bottom: -20px !important;  
+    }
+    #quote-carousel .carousel-indicators li {
+        display: inline-block;
+        margin: 0px 5px;
+        width: 15px;
+        height: 15px;
+    }
+    #quote-carousel .carousel-indicators li.active {
+        margin: 0px 5px;
+        width: 20px;
+        height: 20px;
+    }
+}
+h2 {
+	color: #333;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+	position: relative;
+	margin: 30px 0 60px;
+}
+#client-testimonial-carousel {min-height: 200px;
+}
+h2::after {
+	content: "";
+	width: 100px;
+	position: absolute;
+	margin: 0 auto;
+	height: 3px;
+	background: #8fbc54;
+	left: 0;
+	right: 0;
+	bottom: -10px;
+}
+.col-center {
+	margin: 0 auto;
+	float: none !important;
+}
+.carousel {
+	padding: 0 70px;
+}
+.carousel .carousel-item {
+	color: #999;
+	font-size: 14px;
+	text-align: center;
+	overflow: hidden;
+	min-height: 290px;
+}
+.carousel .carousel-item .img-box {
+	width: 135px;
+	height: 135px;
+	margin: 0 auto;
+	padding: 5px;
+	border: 1px solid #ddd;
+	border-radius: 50%;
+}
+.carousel .img-box img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	border-radius: 50%;
+}
+.carousel .testimonial {
+	padding: 30px 0 10px;
+}
+.carousel .overview {	
+	font-style: italic;
+}
+.carousel .overview b {
+	text-transform: uppercase;
+	color: #7AA641;
+}
+.carousel-control-prev, .carousel-control-next {
+	width: 40px;
+	height: 40px;
+	margin-top: -20px;
+	top: 50%;
+	background: none;
+}
+.carousel-control-prev i, .carousel-control-next i {
+	font-size: 68px;
+	line-height: 42px;
+	position: absolute;
+	display: inline-block;
+	color: rgba(0, 0, 0, 0.8);
+	text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
+}
+.carousel-indicators {
+	bottom: -40px;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+	width: 12px;
+	height: 12px;
+	margin: 1px 3px;
+	border-radius: 50%;
+	border: none;
+}
+.carousel-indicators li {	
+	background: #999;
+	border-color: transparent;
+	box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
+}
+.carousel-indicators li.active {	
+	background: #555;		
+	box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <a href="http://127.0.0.1:5500/index.html">Home</a>
+        </nav>
+    </header>
+<div class="container-xl">
+	<div class="row">
+		<div class="col-lg-8 mx-auto">
+			<h2>The main characters of the film</h2>
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Carousel indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol>   
+				<!-- Wrapper for carousel items -->
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<div class="img-box"><img src="image/lol.jpg" alt=""></div>
+						<p class="testimonial">She is a cyborg with a unique artificial intelligence technology.She has unique martial arts skills and strength that she uses to fight crime and evil.Alita is portrayed as a strong and independent character, who gradually realizes his true identity.</p>
+						<p class="overview"><b>Alita</b>, The main character</p>
+					</div>
+					<div class="carousel-item">
+						<div class="img-box"><img src="image/art3.jpg" alt=""></div>
+						<p class="testimonial">In the film, he is a surgeon and mechanic who discovers Alita, a cyborg girl, and restores her. Dr. Ido plays an important role in the life of the Elite, becoming her mentor, protector and substitute father.He is a combination of kindness, experience and strength.</p>
+						<p class="overview"><b>Dr. Ido</b>, Key character</p>
+					</div>
+					<div class="carousel-item">
+						<div class="img-box"><img src="image/ol3.jpg" alt=""></div>
+						<p class="testimonial">He is a violent and powerful criminal in Iron City, one of the main locations of the film. He is also the main antagonist of the film, standing in the way of the Elite and its quest for justice and freedom. Vector shows cruelty and ruthlessness in his actions.</p>
+						<p class="overview"><b>Vector</b>, The main antagonist</p>
+					</div>
+				</div>
+				<!-- Carousel controls -->
+				<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+					<i class="fa fa-angle-left"></i>
+				</a>
+				<a class="carousel-control-next" href="#myCarousel" data-slide="next">
+					<i class="fa fa-angle-right"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+    <div class="row">
+      <div class='col-md-offset-2 col-md-8 text-center'>
+        <h2>Quotes from the film:</h2>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-md-offset-2 col-md-8'>
+        <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+          <!-- Bottom Carousel Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#quote-carousel" data-slide-to="1"></li>
+            <li data-target="#quote-carousel" data-slide-to="2"></li>
+          </ol>
+          
+          <!-- Carousel Slides / Quotes -->
+          <div class="carousel-inner">
+          
+            <!-- Quote 1 -->
+            <div class="item active">
+              <blockquote>
+                <div class="row">
+                  <div class="col-sm-3 text-center">
+                    <img class="img-circle" src="image/ol4.jpg" style="width: 100px;height:100px;">
+                    <!--<img class="img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" style="width: 100px;height:100px;">-->
+                  </div>
+                  <div class="col-sm-9">
+                    <p>Strength and power are two very different things. You can find power in unexpected places, but true strength comes from within.</p>
+                    <small>Alita</small>
+                  </div>
+                </div>
+              </blockquote>
+            </div>
+            <!-- Quote 2 -->
+            <div class="item">
+              <blockquote>
+                <div class="row">
+                  <div class="col-sm-3 text-center">
+                    <img class="img-circle" src="image/6.jpg" style="width: 100px;height:100px;">
+                  </div>
+                  <div class="col-sm-9">
+                    <p>You are stronger than you realize. Trust yourself.</p>
+                    <small>Dr. Ido</small>
+                  </div>
+                </div>
+              </blockquote>
+            </div>
+            <!-- Quote 3 -->
+            <div class="item">
+              <blockquote>
+                <div class="row">
+                  <div class="col-sm-3 text-center">
+                    <img class="img-circle" src="image/9.jpg" style="width: 100px;height:100px;">
+                  </div>
+                  <div class="col-sm-9">
+                    <p>Live for the moment, because tomorrow is not promised.</p>
+                    <small>Hugo</small>
+                  </div>
+                </div>
+              </blockquote>
+            </div>
+          </div>
+          
+          <!-- Carousel Buttons Next/Prev -->
+          <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+          <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+        </div>                          
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // When the DOM is ready, run this function
+$(document).ready(function() {
+  //Set the carousel options
+  $('#quote-carousel').carousel({
+    pause: true,
+    interval: 4000,
+  });
+});
+  </script>
+</body>
+</html>

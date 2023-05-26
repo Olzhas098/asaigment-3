@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About this film</title>
+  <link rel="stylesheet" href="interest.css" />
+  <script
+          src="https://kit.fontawesome.com/your-font-awesome-key.js"
+          crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <h1 class="logo">Alita Battle Angel</h1>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="http://127.0.0.1:5500/index.html">Home</a></li>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#cast">Cast</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="overview">
+    <div class="overview-container">
+      <h2 class="section-title">Overview</h2>
+      <div class="poster-container">
+        <img
+                src="image/MV5BMTQzYWYwYjctY2JhZS00NTYzLTllM2UtZWY5ZTk0NmYwYzIyXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg"
+                height="450" width="300"/>
+      </div>
+      <div class="description-container">
+        <p class="overview-text">
+          Alita Battle Angel is a 2019 American cyberpunk action film based
+          on the manga series Battle Angel Alita by Yukito Kishiro. The film
+          stars Rosa Salazar as Alita, a cyborg with no memory of her past,
+          who becomes a skilled warrior in a futuristic city.
+        </p>
+        <p class="overview-text">
+          The film explores themes of identity, self-discovery, and the
+          consequences of power. Alita Battle Angel was praised for its
+          visual effects and action sequences, and has gained a dedicated
+          fan following.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cast">
+    <div class="cast-container">
+      <h2 class="section-title">Cast</h2>
+      <ul class="cast-list">
+        <li class="cast-item">Rosa Salazar as Alita</li>
+        <li class="cast-item">Christoph Waltz as Dr. Dyson Ido</li>
+        <li class="cast-item">Jennifer Connelly as Chiren</li>
+        <li class="cast-item">Mahershala Ali as Vector</li>
+        <li class="cast-item">Ed Skrein as Zapan</li>
+        <li class="cast-item">Keean Johnson as Hugo</li>
+      </ul>
+    </div>
+  </section>
+  <section id="reviews">
+  <div class="reviews-container">
+    <h2 class="section-title">Reviews</h2>
+    <article class="review-item">
+      <h3 class="review-title">Mr.Sam</h3>
+      <p class="review-text">
+        Alita Battle Angel is a visually stunning sci-fi epic that manages
+        to balance action and heart.
+      </p>
+    </article>
+    <article class="review-item">
+      <h3 class="review-title">Caleb Wong</h3>
+      <p class="review-text">"Alita Battle Angel" is a visually stunning cyberpunk action film that takes the audience on a thrilling journey through a futuristic world. With amazing special effects and heart-pumping fight scenes, the film delivers an exciting and unforgettable cinematic experience. The central theme of self-discovery and identity adds depth to the story, making it more than just a mindless action movie. Overall, "Alita Battle Angel" is a must-see for fans of the sci-fi and action genres.
+      </p>
+    </article>
+    <article class="review-item">
+      <h3 class="review-title">Olivia Lopez</h3>
+      <p class="review-text">This film is a true feast for the eyes, with stunning special effects and incredible action sequences that will leave you breathless. "Alita: Battle Angel" is a must-see for anyone who loves sci-fi or action movies.
+      </p>
+    </article>
+    <article class="review-item">
+      <h3 class="review-title">Ethan Patel</h3>
+      <p class="review-text">"Alita: Battle Angel" is a cinematic masterpiece that brings the manga character to life in a visually stunning and action-packed way. The film is a true testament to the power of storytelling and its ability to transport audiences to new and exciting worlds.
+      </p>
+    </article>
+    <article class="review-item">
+      <h3 class="review-title">Zoe Kim</h3>
+      <p class="review-text">If you're a fan of cyberpunk, action, or just good old-fashioned storytelling, "Alita: Battle Angel" is the movie for you. With stunning visuals and an engaging plot, this film is a must-see for all sci-fi fans.
+      </p>
+    </article>
+  </div>
+</section>
+</main>
+<section id="comments">
+  <div class="comment-container">
+    <h2 class="section-title">Leave a Comment</h2>
+    <form action="submit-comment.php" method="POST">
+      <label for="name">Name: </label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="comment">Comment:</label>
+      <textarea id="comment" name="comment" required> </textarea>
+
+      <input type="submit" value="Submit">
+
+    </form>
+  </div>
+</section>
+<footer>
+  <div class="footer-container">
+    <p>&copy; 2023 Alita Battle Angel</p>
+    <div class="social-media">
+      <a href="https://www.facebook.com/AlitaMovie/"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com/AlitaMovie"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/alitamovie/"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

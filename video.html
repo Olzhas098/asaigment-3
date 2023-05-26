@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Алита: Боевой ангел</title>
+    <link rel="stylesheet" href="video.css">
+  </head>
+<html> 
+<body> 
+  <header>
+    <nav class="navigation">
+        <a href="http://127.0.0.1:5500/index.html">Home</a>
+    </nav>
+</header>
+
+<div style="text-align:center"> 
+  <button onclick="playPause()">Play/Pause</button> 
+  <button onclick="makeBig()">Big</button>
+  <button onclick="makeSmall()">Small</button>
+  <button onclick="makeNormal()">Normal</button>
+  <br> 
+  <video id="video1" width="420">
+    <source src="video/Запан и Алита  Алита  боевой  Ангел.mp4" type="video/mp4">
+    <source src="video/Запан и Алита  Алита  боевой  Ангел.mp4" type="video/ogg">
+    Your browser does not support HTML5 video.
+  </video>
+  <audio id="musicPlayer" src="music/dua-lipa-swan-song.mp3"></audio>
+    <button id="playButton">Play Music</button>
+    <p>Музыка из фильма:</p>
+</div> 
+<div class="swiper-container">
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+  <h5>Characters:</h5>
+  <p id="result"></p>
+  <button onclick="filterCharacters('Protagonist')">Filter Protagonists</button>
+  <button onclick="filterCharacters('Antagonist')">Filter Antagonists</button>
+  <button onclick="returnCharacters()">Return</button>
+<script src="video.js"></script>
+
+<a href="video/Запан и Алита  Алита  боевой  Ангел.mp4" target="_blank"></a>
+</body> 
+</html>

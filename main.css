@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+body{
+    background: url(image/1661406498_51-funart-pro-p-krasivie-vidi-gor-oboi-57.jpg) no-repeat;
+}
+p{
+    font-size: 20px;
+}
+a, a:hover{
+  text-decoration: none;
+  color: #fff;
+}
+
+ul{
+  list-style: none;
+}
+
+li{
+  display: inline-block;
+}
+
+section{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.header{
+  width: 100%;
+  background-color: transparent;
+}
+
+.header .nav-bar{
+  width: 90%;
+  height: 80px;
+  line-height: 80px;
+  margin: auto;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #fff;
+}
+
+.header .nav-bar .logo{
+  z-index: 2;
+}
+
+.header .nav-bar .logo a{
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.header .nav-bar .menu{
+  z-index: 2;
+}
+
+.header .nav-bar .menu ul li{
+  margin-right: 30px;
+}
+
+.header .nav-bar .menu ul li a{
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  padding: 10px;
+  border-radius: 5px;
+  text-transform: capitalize;  
+  transition: all 0.5s ease-in-out;
+  opacity: 0.8;
+}
+
+.header .nav-bar .menu ul li a.active{
+  opacity: 1;
+  background-color: #fff;
+  color: #000;
+}
+
+.header .nav-bar .menu ul li a:hover{
+  opacity: 1;
+  background-color: #fff;
+  color: #000;
+}
+
+.header .nav-bar .social-media{
+  z-index: 2;
+}
+
+.header .nav-bar .social-media ul li i{
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  margin-right: 5px;
+  text-align: center;
+  align-items: center;
+  font-size: 19px;
+  border-radius: 5px;
+  background-color: #cac5c542;
+  box-shadow: 0 0 25px rgba(24,24,24,.4);
+  transition: all 0.3s ease-in-out;
+}
+
+.header .nav-bar .social-media ul li i:hover{
+  background-color: #fff;
+  color: #000;
+}
+
+.hero-sec{
+    width: 100%;
+}
+
+.hero-sec .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-sec .caption{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.hero-sec .caption h3{
+  color: #fff;
+  font-size: 55px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.hero-sec .caption a{
+    text-decoration: none;
+    font-size: 17px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    font-weight: 600;
+    line-height: 95px;
+    padding: 15px 25px;
+    text-transform: uppercase;
+    border: 1px solid #fff;
+    margin-right: 15px;
+    box-shadow: 0 0 25px rgba(24,24,24,.9);
+    transition: all 0.3s;
+}
+
+.hero-sec .caption a:hover{
+  background-color: #fff;
+  color: #000;
+}
+
+.hero-sec .caption a:first-child{
+  background-color: #fff;
+  color: #000;
+}
+
+.hero-sec .caption a:first-child:hover{
+  background-color: transparent;
+  color: #fff;
+}
+
+.hero-sec .caption .description{
+  margin: 25px 0;
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+}

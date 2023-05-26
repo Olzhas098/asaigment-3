@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-image: url("image/Backgrounds_Black_wallpaper_with_a_dragon_078565_.jpg");
+      background-size: cover;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    
+    h1 {
+      margin-bottom: 30px;
+    }
+    
+    .question {
+      margin-bottom: 20px;
+    }
+    
+    .options button {
+      margin-right: 10px;
+    }
+    
+    .correct {
+      background-color: green;
+    }
+    
+    .wrong {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Alita: Battle Angel Quiz</h1>
+  <div id="question-container"></div>
+  <div id="options-container"></div>
+  <button id="back" disabled>Back</button>
+  <button id="next">Next</button>
+  <button id="check">Check Results</button>
+  
+  <script>
+    var currentQuestion = 0;
+    var answers = [];
+    
+    var questions = [
+      {
+        question: "What is the name of the main character in the movie?",
+        options: ["Aurora", "Alita", "Amelia", "Alicia"],
+        answer: 1
+      },
+      {
+        question: "What is the name of the city where the story takes place?",
+        options: ["Iron City", "Steel City", "Titanium City", "Cyber City"],
+        answer: 0
+      },
+      {
+        question: "Who is the director of the movie?",
+        options: ["Robert Rodriguez", "James Cameron", "Christopher Nolan", "Steven Spielberg"],
+        answer: 0
+      },
+      {
+        question: "What is the name of Alita's love interest?",
+        options: ["Hugo", "Lucas", "Nico", "Ethan"],
+        answer: 0
+      },
+      {
+        question: "What is the significance of the motorball game in the movie?",
+        options: ["It is a popular sport in the future", "It is a form of entertainment for the rich", "It is used to showcase Alita's skills", "All of the above"],
+        answer: 3
+      },
+      {
+        question: "What is Alita's combat style based on?",
+        options: ["Panzer Kunst", "Krav Maga", "Kung Fu", "Muay Thai"],
+        answer: 0
+      },
+      {
+        question: "What is the name of the floating city in the movie?",
+        options: ["Zalem", "Olympus", "Atlantis", "Elysium"],
+        answer: 0
+      },
+      {
+        question: "Who played the role of Alita in the movie?",
+        options: ["Rosa Salazar", "Alicia Vikander", "Scarlett Johansson", "Brie Larson"],
+        answer: 0
+      },
+      {
+        question: "What is the name of the doctor who helps Alita?",
+        options: ["Dyson Ido", "Victor Frankenstein", "Henry Jekyll", "Walter Bishop"],
+        answer: 0
+      },
+      {
+        question: "What is Alita's battle cry?",
+        options: ["For justice!", "I am Alita!", "This is war!", "Stand and fight!"],
+        answer: 1
+      }
+    ];
+    
+    function showQuestion() {
+      var questionContainer = document.getElementById("question-container");
+      var optionsContainer = document.getElementById("options-container");
+      
+      questionContainer.innerHTML = "";
+      optionsContainer.innerHTML = "";
+      
+      var current = questions[currentQuestion];
+      
+      var questionElement = document.createElement("div");
+      questionElement.className = "question";
+      questionElement.textContent = current.question;
+      questionContainer.appendChild(questionElement);
+      
+      var options = current.options;
+      
+      for (var i = 0; i < options.length; i++) {
+        var optionButton = document.createElement("button");
+        optionButton.textContent = options[i];
+        optionButton.addEventListener("click", checkAnswer);
+        optionsContainer.appendChild(optionButton);
+      }
+      
+      updateButtons();
+    }
+    
+    function checkAnswer(event) {
+      var selectedOption = event.target;
+      var answerIndex = Array.from(selectedOption.parentNode.children).indexOf(selectedOption);
+      
+      if (answerIndex === questions[currentQuestion].answer) {
+        selectedOption.className = "correct";
+        answers[currentQuestion] = true;
+      } else {
+        selectedOption.className = "wrong";
+        answers[currentQuestion] = false;
+      }
+      
+      disableOptions();
+      updateButtons();
+    }
+    
+    function disableOptions() {
+      var options = document.querySelectorAll("#options-container button");
+      
+      for (var i = 0; i < options.length; i++) {
+        options[i].disabled = true;
+      }
+    }
+    
+    function updateButtons() {
+      var backButton = document.getElementById("back");
+      var nextButton = document.getElementById("next");
+      var checkButton = document.getElementById("check");
+      
+      backButton.disabled = currentQuestion === 0;
+      nextButton.disabled = currentQuestion === questions.length - 1;
+      checkButton.disabled = currentQuestion >= Math.min(questions.length, 10) - 1;
+    }
+    
+    function showNextQuestion() {
+      currentQuestion++;
+      showQuestion();
+    }
+    
+    function showPreviousQuestion() {
+      currentQuestion--;
+      showQuestion();
+    }
+    
+    function checkResults() {
+      var score = 0;
+      
+      for (var i = 0; i < answers.length; i++) {
+        if (answers[i] === true) {
+          score++;
+        }
+      }
+      
+      var questionContainer = document.getElementById("question-container");
+      var optionsContainer = document.getElementById("options-container");
+      
+      questionContainer.innerHTML = "<h2>Results</h2>";
+      questionContainer.innerHTML += "<p>You scored " + score + " out of " + Math.min(questions.length, 10) + ".</p>";
+      
+      optionsContainer.innerHTML = "";
+    }
+    
+    function initializeQuiz() {
+      var backButton = document.getElementById("back");
+      var nextButton = document.getElementById("next");
+      var checkButton = document.getElementById("check");
+      
+      backButton.addEventListener("click", showPreviousQuestion);
+      nextButton.addEventListener("click", showNextQuestion);
+      checkButton.addEventListener("click", checkResults);
+      
+      showQuestion();
+    }
+    
+    initializeQuiz();
+  </script>
+</body>
+</html>
